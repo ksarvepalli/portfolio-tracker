@@ -2,7 +2,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/portfoliodb
     username: postgres
-    password: secret
+    password:  ${DB_PASSWORD:changeme}
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
@@ -32,5 +32,5 @@ app:
       base-url: https://api.mfapi.in/mf
     gold-api:
       base-url:  https://www.goldapi.io/api/XAU/INR
-      apikey: goldapi-aed74706222967c281d19f9a59838d60-io
+      apikey: ${GOLD_API_KEY:your-gold-api-key}
 
