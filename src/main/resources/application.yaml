@@ -1,0 +1,36 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/portfoliodb
+    username: postgres
+    password: secret
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  jackson:
+    serialization:
+      write-bigdecimal-as-plain: true
+data:
+  redis:
+    host: localhost
+    port: 6379
+    timeout: 2000ms
+  cache:
+    type: redis
+    redis:
+      time-to-live: 300000  # 5 minutes default
+app:
+  market:
+    yahoo-finance:
+      base-url: https://query1.finance.yahoo.com/v8/finance/chart/
+    mfapi:
+      base-url: https://api.mfapi.in/mf
+    gold-api:
+      base-url:  https://www.goldapi.io/api/XAU/INR
+      apikey: goldapi-aed74706222967c281d19f9a59838d60-io
+
